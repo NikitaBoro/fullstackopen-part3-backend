@@ -6,14 +6,17 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf dist && cd ../fullstack-open/part2/phonebook && npm run build && cp -r dist ../../../fullstack-open-part3",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "mongoose": "^8.9.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
